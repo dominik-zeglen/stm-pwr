@@ -42,6 +42,14 @@ const Home = withStyles(styles, {
             <Typography variant="button">Nadchodzące wizyty</Typography>
           </CardContent>
         </Card>
+        <Card
+          className={classes.card}
+          onClick={() => navigate("/appointment-history")}
+        >
+          <CardContent>
+            <Typography variant="button">Historia wizyt</Typography>
+          </CardContent>
+        </Card>
       </div>
     )}
   </Navigator>

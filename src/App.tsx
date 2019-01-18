@@ -16,6 +16,8 @@ import AppointmentListComponent, {
 } from "./components/AppointmentList";
 import Navigator from "./components/Navigator";
 import Appointments from "./components/Appointments";
+import AppointmentHistory from "./components/AppointmentHistory";
+import AppointmentDetails from "./components/AppointmentDetails";
 
 const AppointmentDate: React.SFC<RouteComponentProps<AppointmentDateProps>> = ({
   match: {
@@ -51,6 +53,16 @@ export const App: React.SFC = () => (
                 component={AppointmentList}
               />
               <Route exact path="/appointments" component={Appointments} />
+              <Route
+                exact
+                path="/appointment-history"
+                component={AppointmentHistory}
+              />
+              <Route
+                exact
+                path="/appointment-details"
+                component={AppointmentDetails}
+              />
             </Switch>
           </Container>
         </div>

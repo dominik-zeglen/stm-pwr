@@ -10,9 +10,9 @@ import Navigator from "./Navigator";
 import { clinics } from "../data";
 import { Avatar, Button } from "@material-ui/core";
 
-export interface AppointmentsProps {}
+export interface AppointmentHistoryProps {}
 
-const Appointments: React.SFC<AppointmentsProps> = () => {
+const AppointmentHistory: React.SFC<AppointmentHistoryProps> = () => {
   const clinicData = clinics[0];
   const doctorAvailableDates = clinicData.doctors.map(doctor => ({
     ...doctor,
@@ -59,7 +59,9 @@ const Appointments: React.SFC<AppointmentsProps> = () => {
                   <TableCell>{availableDate.doctor.name}</TableCell>
                   <TableCell>{availableDate.doctor.rating}</TableCell>
                   <TableCell>
-                    <Button>Odwołaj</Button>
+                    <Button onClick={() => navigate("/appointment-details")}>
+                      Szczegóły
+                    </Button>
                   </TableCell>
                 </TableRow>
               ))}
@@ -70,4 +72,4 @@ const Appointments: React.SFC<AppointmentsProps> = () => {
     </Navigator>
   );
 };
-export default Appointments;
+export default AppointmentHistory;
