@@ -1,5 +1,5 @@
 import * as React from "react";
-import { withStyles, WithStyles } from "@material-ui/core/styles";
+import { withStyles, WithStyles, createStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
@@ -7,20 +7,21 @@ import Navigator from "./Navigator";
 
 interface HomeProps {}
 
-const styles = {
+const styles = createStyles({
   card: {
     cursor: "pointer",
     margin: "24px auto",
-    width: 576,
+    width: 768,
     "&:hover": {
       backgroundColor: "#f3f3f3"
     }
   },
   root: {
     alignItems: "center",
-    display: "flex"
+    display: "flex",
+    flexDirection: "column"
   }
-};
+});
 
 const Home = withStyles(styles, {
   name: "Home"
@@ -31,6 +32,14 @@ const Home = withStyles(styles, {
         <Card className={classes.card} onClick={() => navigate("/appointment")}>
           <CardContent>
             <Typography variant="button">Zarejestruj wizytę</Typography>
+          </CardContent>
+        </Card>
+        <Card
+          className={classes.card}
+          onClick={() => navigate("/appointments")}
+        >
+          <CardContent>
+            <Typography variant="button">Nadchodzące wizyty</Typography>
           </CardContent>
         </Card>
       </div>

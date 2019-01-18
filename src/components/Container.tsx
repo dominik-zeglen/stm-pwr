@@ -8,7 +8,7 @@ interface ContainerProps {
 const styles = {
   root: {
     margin: "0 auto",
-    maxWidth: 568,
+    maxWidth: 768,
     width: "100%"
   }
 };

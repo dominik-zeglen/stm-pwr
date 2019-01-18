@@ -12,7 +12,7 @@ const styles = {
   card: {
     cursor: "pointer",
     margin: "24px auto",
-    width: 576,
+    width: 768,
     "&:hover": {
       backgroundColor: "#f3f3f3"
     }
